@@ -1,0 +1,26 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "rules": {
+      // enable additional rules
+      "indent": ["error", 4],
+      "linebreak-style": ["error", "unix"],
+      "quotes": ["error", "single"],
+      "semi": ["error", "always"],
+
+      // override default options for rules from base configurations
+      "comma-dangle": ["off", "always"],
+      "no-cond-assign": ["error", "always"],
+
+      // disable rules from base configurations
+      "no-console": "off"
+  }
+}
