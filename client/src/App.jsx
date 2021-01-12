@@ -1,16 +1,19 @@
 import React, { Fragment, Component,} from 'react';
-import { Button, } from 'semantic-ui-react';
+import SidebarNav from './components/Sidebar';
 import 'semantic-ui-css/semantic.min.css';
 import './App.css';
 class App extends Component {
+
+
     render() {
         return(
             <Fragment>
-                <Button>Click Here</Button>
+                <SidebarNav />
             </Fragment>
 
         );
     }
 }
+
 export default App;
  
