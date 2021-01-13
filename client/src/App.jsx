@@ -4,7 +4,7 @@ import 'styling/semantic.less'
 import React from 'react'
 import { Button, Icon } from 'semantic-ui-react'
 
-const App = () => <div className="min-vh-100 w-100 flex flex-column items-center justify-center">
+const App = () => <div className="min-vh-100 w-200 flex flex-column items-center">
     <div className="w-100 mw7">
         <h1 className="lh-title"><Icon name='home' /> react-semantic-boilerplate</h1>
 
@@ -28,7 +28,7 @@ const App = () => <div className="min-vh-100 w-100 flex flex-column items-center
         <p className="lh-copy">
             And just for fun: A button!
         </p>
-
+        <button class="ui green basic button">Green</button>
         <Button primary>Semantic UI button</Button>
     </div>
 </div>
