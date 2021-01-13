@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import 'tachyons'
 import 'styling/semantic.less'
 
@@ -34,3 +35,20 @@ const App = () => <div className="min-vh-100 w-200 flex flex-column items-center
 </div>
 
 export default App
+=======
+import 'tachyons';
+import 'styling/semantic.less';
+import React from 'react';
+import Routes from './router/routes';
+import { AppContainer } from 'react-hot-loader'
+
+function App() {
+	return (
+		<AppContainer>
+		<Routes />
+		</AppContainer>
+	);
+}
+
+export default App;
+>>>>>>> work
