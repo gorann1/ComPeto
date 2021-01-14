@@ -1,93 +1,53 @@
-import React, {useEffect, useState} from "react";
-import styled from 'styled-components';
-import SidebarItems from "./SidebarItems";
-import {Link} from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { Checkbox, Grid, Header, Segment, Sidebar, Image, Menu } from 'semantic-ui-react';
 
-function Sidebar(props, {defaultActive,}) {
-    const location = props.history.location;
-    const lastActiveIndexString = localStorage.getItem("lastActiveIndex");
-    const lastActiveIndex = Number(lastActiveIndexString);
-    const [activeIndex, setActiveIndex] = useState(lastActiveIndex || defaultActive);
+function SidebarNav() {
 
-    function changeActiveIndex(newIndex) {
-        localStorage.setItem("lastActiveIndex", newIndex)
-        setActiveIndex(newIndex)
-    }
+	const [visible, setVisible] = React.useState(true)
 
-    function getPath(path) {
-        if (path.charAt(0) !== "/") {
-            return  "/" + path;
-        }
-        return path;
-    }
+	return (
+		<Grid columns={1}>
+		<Grid.Column>
+			<Checkbox
+				checked={visible}
+				label={{ children: <code>visible</code> }}
+				onChange={(e, data) => setVisible(data.checked)}
+			/>
+		</Grid.Column>
 
-    useEffect(()=> {
-        const activeItem = SidebarItems.findIndex(item=> getPath(item.route) === getPath(location.pathname))
-        changeActiveIndex(activeItem);
-    }, [location])
-
-    return (
-        <div>
-            <SidebarParent>
-                <div>
-                    {
-                        SidebarItems.map((item, index)=> {
-                            return (
-                                <Link to={item.route}>
-                                    <SidebarItem key={item.name}
-                                                 active={index === activeIndex}
-                                    >
-                                        <p>{item.name}</p>
-                                    </SidebarItem>
-                                </Link>
-                            );
-                        })
-                    }
-
-                </div>
-                <div className="behind-the-scenes"/>
-            </SidebarParent>
-        </div>
-    );
+		<Grid.Column>
+			<Sidebar.Pushable as={Segment}>
+			<Sidebar
+            as={Menu}
+            animation='slide along'
+            icon='labeled'
+            onHide={() => setVisible(false)}
+            vertical
+            visible={visible}
+            width='wide'
+          >
+						 <Menu pointing secondary vertical>
+            <Menu.Item as='a'>
+              Home
+            </Menu.Item>
+            <Menu.Item as='a'>
+              Games
+            </Menu.Item>
+            <Menu.Item as='a'>
+              Channels
+            </Menu.Item>
+						</Menu>
+          </Sidebar>
+				<Sidebar.Pusher>
+					<Segment basic>
+						<Header as='h3'>Application Content</Header>
+						<Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
+					</Segment>
+				</Sidebar.Pusher>
+			</Sidebar.Pushable>
+		</Grid.Column>
+	</Grid>
+	);
 }
 
-export default Sidebar;
-
-const SidebarParent = styled.div`
-  background: #cf3d2a;
-  
-  a {
-    text-decoration: none;
-  }
-  
-  & > div {
-    width: 250px;
-    height: 100vh;
-  }
-  
-  .behind-the-scenes {
-    width: 250px;
-    
-  }
-`;
-
-const SidebarItem = styled.div`
-  padding: 16px 24px;
-  transition: all 0.25s ease-in-out;
-  background: ${props => props.active ? "#b15b00" : ""};
-  margin: 4px 12px;
-  border-radius: 4px;
-  p {
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-  }
-  
-  &:hover {
-    cursor:pointer;
-  }
-  
-  &:hover:not(:first-child) {
-    background: #c34a36;
-  }
-`;
+export default SidebarNav;

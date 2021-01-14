@@ -1,18 +1,18 @@
 import React from 'react';
-import Sidebar from "../Sidebar";
+import SidebarNav from "../Sidebar";
 import Nav from "../Navbar";
 
 
 function Layout(props) {
     
     return (
-        <>
-                <Sidebar history={props.history}/>
-                <div>
-                    <Nav history={props.history}/>
-                    {props.children}
-                </div>
-                </>
+    <div className="ui wrapper">
+        <SidebarNav history={props.history}/>
+            <div className="pusher">
+                <Nav history={props.history}/>
+                {props.children}
+            </div>
+    </div>
     );
 }
 
