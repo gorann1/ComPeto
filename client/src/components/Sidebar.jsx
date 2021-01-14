@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Checkbox, Grid, Header, Segment, Sidebar, Image, Menu } from 'semantic-ui-react';
+import { Grid, Header, Segment, Sidebar, Image, Menu } from 'semantic-ui-react';
 
 function SidebarNav() {
 
@@ -7,14 +7,6 @@ function SidebarNav() {
 
 	return (
 		<Grid columns={1}>
-		<Grid.Column>
-			<Checkbox
-				checked={visible}
-				label={{ children: <code>visible</code> }}
-				onChange={(e, data) => setVisible(data.checked)}
-			/>
-		</Grid.Column>
-
 		<Grid.Column>
 			<Sidebar.Pushable as={Segment}>
 			<Sidebar
@@ -24,9 +16,8 @@ function SidebarNav() {
             onHide={() => setVisible(false)}
             vertical
             visible={visible}
-            width='wide'
-          >
-						 <Menu pointing secondary vertical>
+						width='large'          >
+						 <Menu size="large" pointing secondary vertical style={{width:'100%', fontSize:'1.1em'}}>
             <Menu.Item as='a'>
               Home
             </Menu.Item>
