@@ -17,7 +17,7 @@ const SidebarItems = [
     },
     {
         name: "Register",
-        route: 'register'
+        route: '/register'
     },
 ];
 

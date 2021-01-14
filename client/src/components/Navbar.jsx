@@ -1,13 +1,22 @@
-
+ 
 import React from 'react';
+import { Menu, Segment } from 'semantic-ui-react';
+import Navbartems from './NavbarItems';
+import {Link} from "react-router-dom";
 
 function Nav(props) {
+
+ //TODO: add menu items
     return (
+        <>
+        <Menu pointing>
+        <h3>Navbar Items</h3>
         <div>
-            <h2>I'm a nav</h2>
-            <p>Ignore me. I'm not important. I'm cool, though.</p>
+          lorem
         </div>
+        </Menu>
+        </>
     );
 }
 
-export default Nav;
+export default Nav; 

@@ -2,6 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Routes from "./router/routes";
+import 'styling/semantic.less';
 
 ReactDOM.render(<Routes/>, document.getElementById('root'));
 

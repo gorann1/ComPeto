@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from "react";
-import styled from 'styled-components'
+import styled from 'styled-components';
 import SidebarItems from "./SidebarItems";
 import {Link} from "react-router-dom";
+import { Button } from 'semantic-ui-react';
 
 function Sidebar(props, {defaultActive,}) {
     const location = props.history.location;
@@ -27,9 +28,12 @@ function Sidebar(props, {defaultActive,}) {
     }, [location])
 
     return (
-        <>
+        <div>
+          <Button.Group>
+            <Button>Show Sidebar</Button>
+          </Button.Group>
             <SidebarParent>
-                <div style={{position: 'fixed'}}>
+                <div>
                     {
                         SidebarItems.map((item, index)=> {
                             return (
@@ -47,7 +51,7 @@ function Sidebar(props, {defaultActive,}) {
                 </div>
                 <div className="behind-the-scenes"/>
             </SidebarParent>
-        </>
+        </div>
     );
 }
 
