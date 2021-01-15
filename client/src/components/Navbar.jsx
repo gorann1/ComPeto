@@ -29,9 +29,6 @@ function Nav(props, { defaultActive }) {
 	// TODO: add menu items
 	return (
 		<Menu secondary>
-			<Button.Group>
-				<Button>Show Sidebar</Button>
-			</Button.Group>
 			<Menu.Item>
 				<Input icon='search' placeholder='Search...' />
 			</Menu.Item>

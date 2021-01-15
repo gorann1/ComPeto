@@ -7,7 +7,7 @@ import { AppContainer } from 'react-hot-loader'
 function App() {
 	return (
 		<AppContainer>
-		<Routes />
+			<Routes />
 		</AppContainer>
 	);
 }

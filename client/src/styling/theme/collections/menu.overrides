@@ -1,3 +1,6 @@
 /*******************************
          Theme Overrides
 *******************************/
+.ui.secondary.vertical.pointing.menu .active.item {
+  border-color: #21d1b0;
+}

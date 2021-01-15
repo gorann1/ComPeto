@@ -1,8 +1,4 @@
-const SidebarItems = [
-	{
-		name: 'THE ITALIAN JOB',
-		route: '/',
-	},
+const MenuItems = [
 	{
 		name: 'Centers',
 		route: '/centers',
@@ -21,4 +17,4 @@ const SidebarItems = [
 	},
 ];
 
-export default SidebarItems;
+export default MenuItems;
