@@ -13,6 +13,12 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
   });
+/*   Center.associate = function(models) {
+    Center.hasMany(models.Department, {
+      foreignKey: 'company_id',
+      as: 'branches'
+    });
+  }; */
   Center.schema("koncar");
   return Center;
 };
