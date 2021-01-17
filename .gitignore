@@ -3,3 +3,5 @@ server/.env
 _client
 client/.eslintcache
 client/.eslintcache
+__client
+___client
