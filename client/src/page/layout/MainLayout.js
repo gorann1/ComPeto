@@ -23,7 +23,7 @@ function MainLayout() {
           handleOnCollapse={handleOnCollapse}
         />
         <Content style={{ margin: '24px 16px 0' }}>
-          <div style={{ padding: 24, background: '#fff', minHeight: 20 }}>
+          <div style={{ padding: 24, background: '#fefefe', minHeight: 20 }}>
             <RoutingList />
           </div>
         </Content>

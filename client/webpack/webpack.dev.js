@@ -26,6 +26,13 @@ module.exports = {
             loader: 'less-loader',
             options: {
               lessOptions: {
+                modifyVars: {
+                  'primary-color': '#21d1b0',
+                  'link-color': '#1DA57A',
+                  'border-radius-base': '2px',
+                  'body-background': 'f4f4f4',
+                  'layout-sider-background-light': '#fefefe',
+                },
                 javascriptEnabled: true,
               },
             },

@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  AudioOutlined,
   MenuUnfoldOutlined,
   MenuFoldOutlined,
   QuestionCircleOutlined,
@@ -8,12 +9,13 @@ import {
   UserOutlined,
   LogoutOutlined,
 } from '@ant-design/icons';
-import { Layout, Menu, Badge } from 'antd';
+import { Layout, Menu, Badge, Input, Space } from 'antd';
 import './Style.less';
 import { getUsernameAvatar } from '../../component/UserAvatar';
 
 const { Header } = Layout;
 const { SubMenu } = Menu;
+const { Search } = Input;
 
 function LayoutBanner({ collapsed, handleOnCollapse }) {
   const getCollapseIcon = () => {
@@ -28,6 +30,15 @@ function LayoutBanner({ collapsed, handleOnCollapse }) {
   const handleLanguageMenuClick = () => {};
   const handleSettingMenuClick = () => {};
   const handleLogout = () => {};
+  const suffix = (
+    <AudioOutlined
+      style={{
+        fontSize: 16,
+        color: '#1890ff',
+      }}
+    />
+  );
+  const onSearch = value => console.log(value);
 
   return (
     <Header className="header" style={{ background: '#fff', padding: 0 }}>
@@ -41,6 +52,13 @@ function LayoutBanner({ collapsed, handleOnCollapse }) {
       >
         {window.innerWidth > 992 && getCollapseIcon()}
       </div>
+      <Menu>
+        <Search
+          placeholder="input search text"
+          onSearch={onSearch}
+          style={{ width: 300, verticalAlign: 'middle' }}
+        />
+      </Menu>
       <Menu
         // onClick={this.handleLanguageMenuClick}
         mode="horizontal"
@@ -80,7 +98,7 @@ function LayoutBanner({ collapsed, handleOnCollapse }) {
         </SubMenu>
       </Menu>
       <Menu onClick={handleSettingMenuClick} mode="horizontal" className="menu">
-        <SubMenu title={getUsernameAvatar('Cemal')}>
+        <SubMenu title={getUsernameAvatar('Goran')}>
           <Menu.Item key="setting:1">
             <span>
               <UserOutlined />
