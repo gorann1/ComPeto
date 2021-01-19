@@ -15,21 +15,24 @@ const model = (sequelize, DataTypes) => {
       },
       centerId: {
         type: DataTypes.INTEGER,
-        foreignKey: true,
+        foreignKey:true,
       },
+
       description: {
         type: DataTypes.STRING,
-       },
+      },
     },
-  )
- 
+  );
+
   Department.associate = ({ Center }) => {
-   Department.belongsTo(Center);
-  };
+    Department.belongsTo(Center);
+   };
+
   Department.associate = ({ Dependent }) => {
    Department.hasMany(Dependent);
   };
- 
+  
+  Department.schema("koncar");
   return Department;
 };
  

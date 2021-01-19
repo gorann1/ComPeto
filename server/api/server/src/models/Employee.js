@@ -13,7 +13,7 @@ const model = (sequelize, DataTypes) => {
         type: DataTypes.ENUM('M', 'F')
       },
     },
-  )
+  );
  
   Employee.associate = ({ Position }) => {
    Employee.belongsToMany(Position, {

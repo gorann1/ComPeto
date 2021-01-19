@@ -17,7 +17,7 @@ const model = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
       },
     },
-  )
+  );
  
   Position.associate = ({ Dependent }) => {
    Position.belongsTo(Dependent);

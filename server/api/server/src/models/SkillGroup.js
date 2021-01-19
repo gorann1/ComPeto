@@ -7,7 +7,7 @@ const model = (sequelize, DataTypes) => {
         allowNull: false,
       }
     },
-  )
+  );
  
   SkillGroup.associate = ({ Skill }) => {
    SkillGroup.hasMany(Skill);

@@ -7,7 +7,7 @@ const model = (sequelize, DataTypes) => {
         allowNull: false,
       }
     },
-  )
+  );
  
   Level.associate = ({ PositionSkill }) => {
    Level.belongsToMany(PositionSkill, {

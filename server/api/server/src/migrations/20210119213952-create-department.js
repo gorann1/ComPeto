@@ -1,20 +1,24 @@
+'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Employees', {
+    await queryInterface.createTable('Departments', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      firstName: {
+      name: {
         type: Sequelize.STRING
       },
-      lastName: {
-        type: Sequelize.STRING
+      code: {
+        type: Sequelize.INTEGER
       },
-      gender: {
-        type: Sequelize.ENUM('M', 'F')
+      description: {
+        type: Sequelize.INTEGER
+      },
+      centerId: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
@@ -24,14 +28,9 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
-    },
-    {
-      schema: 'koncar'                      // default: public, PostgreSQL only.
-    }
-    );
+    });
   },
-    
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Employees');
+    await queryInterface.dropTable('Departments');
   }
 };

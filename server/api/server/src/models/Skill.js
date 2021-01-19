@@ -11,7 +11,7 @@ const model = (sequelize, DataTypes) => {
         foreignKey:true,
       }
     },
-  )
+  );
  
   Skill.associate = ({ SkillGroup }) => {
    Skill.belongsTo(SkillGroup);

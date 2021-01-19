@@ -18,7 +18,7 @@ const model = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
       },
     },
-  )
+  );
  
   Dependent.associate = ({ Department }) => {
    Dependent.belongsTo(Department);
