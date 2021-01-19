@@ -1,20 +1,24 @@
 module.exports = {
-  up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Centers', {
+  up: async (queryInterface, Sequelize) => {
+    await queryInterface.createTable('Positions', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
+      title: {
+        type: Sequelize.STRING
+      },
+      dependentId: {
+        type: Sequelize.INTEGER,
+        foreignKey: true
+      },
+      description: {
         type: Sequelize.STRING
       },
       code: {
         type: Sequelize.INTEGER
-      },
-      description: {
-        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -23,18 +27,14 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
-      },
-      
+      }
     },
     {
       schema: 'koncar'                      // default: public, PostgreSQL only.
-    }
-    );
-   
+    });
   },
-  down: ( queryInterface ) => {
-    queryInterface.dropTable('Centers');
+    
+  down: async (queryInterface, Sequelize) => {
+    await queryInterface.dropTable('Positions');
   }
-};
-
-/* options['schema'] = 'dbo'; */
+}

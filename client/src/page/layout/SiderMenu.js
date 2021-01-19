@@ -37,6 +37,12 @@ function SiderMenu({ handleOnCollapse, collapsed }) {
       case 'addEmployee':
         history.push('/add-employee');
         break;
+      case 'showCompetencies':
+        history.push('/competencies');
+        break;
+      case 'addCompetency':
+        history.push('/add-competency');
+        break;
       case 'showCustomers':
         history.push('/customers');
         break;
@@ -95,6 +101,22 @@ function SiderMenu({ handleOnCollapse, collapsed }) {
           </Menu.Item>
           <Menu.Item key="addEmployee">
             <span className="nav-text">Add Employee</span>
+          </Menu.Item>
+        </SubMenu>
+        <SubMenu
+          key="competencies"
+          title={
+            <span>
+              <TeamOutlined />
+              <span>Competencies</span>
+            </span>
+          }
+        >
+          <Menu.Item key="showCompetencies">
+            <span className="nav-text">Show Competencies</span>
+          </Menu.Item>
+          <Menu.Item key="addCompetency">
+            <span className="nav-text">Add Competency</span>
           </Menu.Item>
         </SubMenu>
         <SubMenu

@@ -1,0 +1,45 @@
+module.exports = (sequelize, DataTypes) => {
+  
+  const Center = sequelize.define('center', {
+    centerId:{
+      type: DataTypes.INTEGER,
+      foreign_key:true,
+    },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    description: {
+      type: DataTypes.STRING
+    },
+    code: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    }
+  });
+
+  const Department = sequelize.define('department', {
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    description: {
+      type: DataTypes.STRING
+    },
+    code: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    centerId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      foreignKey: true
+    } 
+  });
+  // Here we can connect countries and cities base on country code
+Center.hasMany(Department, {foreignKey: 'centerId', sourceKey: 'centerId'});
+Department.belongsTo(Center, {foreignKey: 'centerId', targetKey: 'centerId'});
+
+  return Center;
+};
+

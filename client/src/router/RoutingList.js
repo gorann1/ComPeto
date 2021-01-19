@@ -7,6 +7,8 @@ import ShowEmployees from '../page/employee/ShowEmployees';
 import AddEmployee from '../page/employee/AddEmployee';
 import ShowProducts from '../page/product/ShowProducts';
 import AddProduct from '../page/product/AddProduct';
+import AddCompetency from '../page/competency/AddCompetency';
+import ShowCompetencies from '../page/competency/ShowCompetencies';
 
 const routes = [
   {
@@ -33,6 +35,16 @@ const routes = [
     path: '/add-employee',
     component: AddEmployee,
     key: '/add-employee',
+  },
+  {
+    path: '/competencies',
+    component: ShowCompetencies,
+    key: '/competencies',
+  },
+  {
+    path: '/add-competency',
+    component: AddCompetency,
+    key: '/add-competency',
   },
   {
     path: '/products',
