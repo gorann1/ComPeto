@@ -1,4 +1,3 @@
-'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('Departments', {
@@ -28,6 +27,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
+    },
+    {
+      schema: 'koncar'                      // default: public, PostgreSQL only.
+    
     });
   },
   down: async (queryInterface, Sequelize) => {
