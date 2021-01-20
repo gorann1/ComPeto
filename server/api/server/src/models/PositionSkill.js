@@ -2,30 +2,30 @@ const model = (sequelize, DataTypes) => {
   const PositionSkill = sequelize.define(
     'PositionSkill',
     {
-      PositionId: {
+      positionId: {
         type: DataTypes.INTEGER,
         foreignKey:true,
       },
-      SkillId: {
+      skillId: {
         type: DataTypes.INTEGER,
         foreignKey:true,
       },
-      LevelId: {
+      levelId: {
         type: DataTypes.INTEGER,
         foreignKey:true,
       }
     },
   );
   PositionSkill.associate = ({ Position }) => {
-    PositionSkill.belongsTo(Position);
+    PositionSkill.belongsTo(Position, { foreignKey: 'positionId', target: 'id'});
    };
 
   PositionSkill.associate = ({ Skill }) => {
-    PositionSkill.belongsTo(Skill);
+    PositionSkill.belongsTo(Skill, { foreignKey: 'skillId', target: 'id'});
    };
 
   PositionSkill.associate = ({ Level }) => {
-    PositionSkill.belongsTo(Level);
+    PositionSkill.belongsTo(Level, { foreignKey: 'levelId', target: 'id'});
    };
 
   PositionSkill.associate = ({ EmployeePosition }) => {

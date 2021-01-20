@@ -14,10 +14,11 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       description: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       centerId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        foreignKey:true
       },
       createdAt: {
         allowNull: false,

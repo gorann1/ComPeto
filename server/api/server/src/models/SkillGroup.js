@@ -10,7 +10,7 @@ const model = (sequelize, DataTypes) => {
   );
  
   SkillGroup.associate = ({ Skill }) => {
-   SkillGroup.hasMany(Skill);
+   SkillGroup.hasMany(Skill, { foreignKey:'id', targetKey:'skillGroupId'});
   };
 /*   Position.associate = ({ Position }) => {
    Dependent.hasMany(Position);

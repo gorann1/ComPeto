@@ -11,7 +11,8 @@ module.exports = {
         type: Sequelize.STRING
       },
       departmentId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        foreignKey:true
       },
       code: {
         type: Sequelize.INTEGER

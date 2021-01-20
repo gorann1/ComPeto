@@ -2,6 +2,7 @@ import config from 'dotenv';
 import express from 'express';
 import bodyParser from 'body-parser';
 import centerRoutes from './server/routes/CenterRoutes';
+import departmentRoutes from './server/routes/DepartmentRoutes';
 const cors = require('cors')
 
 config.config();
@@ -20,6 +21,7 @@ const port = process.env.PORT || 8000;
 
 // Routes
 app.use('/api/v1/centers', centerRoutes);
+app.use('/api/v1/departments', departmentRoutes);
 
 // when a random route is inputed
 app.get('*', (req, res) => res.status(200).send({

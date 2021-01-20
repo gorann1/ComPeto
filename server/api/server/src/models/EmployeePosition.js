@@ -20,11 +20,11 @@ const model = (sequelize, DataTypes) => {
     },
   );
   EmployeePosition.associate = ({ Employee }) => {
-    EmployeePosition.belongsTo(Employee);
+    EmployeePosition.belongsTo(Employee, {foreignKey:'employeeId', targetKey: 'id'});
    };
 
   EmployeePosition.associate = ({ Position }) => {
-    EmployeePosition.belongsTo(Position);
+    EmployeePosition.belongsTo(Position, {foreignKey:'positionId', targetKey: 'id'});
    };
 
   EmployeePosition.associate = ({ PositionSkill }) => {

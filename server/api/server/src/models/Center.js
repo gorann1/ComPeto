@@ -20,7 +20,7 @@ const model = (sequelize, DataTypes) => {
   )
  
   Center.associate = ({ Department }) => {
-   Center.hasMany(Department);
+   Center.hasMany(Department, {foreignKey:'id', targetKey: 'centerId'});
   };
   
   Center.schema("koncar");

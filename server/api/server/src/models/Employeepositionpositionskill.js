@@ -16,15 +16,15 @@ const model = (sequelize, DataTypes) => {
       }
     },
   );
-  EmployeePositionPositionSkill.associate = ({ Employee }) => {
-    EmployeePositionPositionSkill.belongsTo(Employee);
+  EmployeePositionPositionSkill.associate = ({ EmployeePosition }) => {
+    EmployeePositionPositionSkill.belongsTo(EmployeePosition, {foreignKey:'employeePosition', targetKey:'id'});
    };
 
   EmployeePositionPositionSkill.associate = ({ PositionSkill }) => {
-    EmployeePositionPositionSkill.belongsTo(PositionSkill);
+    EmployeePositionPositionSkill.belongsTo(PositionSkill, {foreignKey:'positionSkill', targetKey:'id'});
    };
   EmployeePositionPositionSkill.associate = ({ Level }) => {
-    EmployeePositionPositionSkill.belongsTo(Level);
+    EmployeePositionPositionSkill.belongsTo(Level, { foreignKey:'levelId', targetKey:'id'});
    };
 ;
   

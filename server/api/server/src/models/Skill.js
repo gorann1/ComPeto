@@ -6,7 +6,7 @@ const model = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      SkillGroupId: {
+      skillGroupId: {
         type: DataTypes.INTEGER,
         foreignKey:true,
       }
@@ -14,7 +14,7 @@ const model = (sequelize, DataTypes) => {
   );
  
   Skill.associate = ({ SkillGroup }) => {
-   Skill.belongsTo(SkillGroup);
+   Skill.belongsTo(SkillGroup, { foreignKey:'skillGroupId', target: 'id'});
   };
   Skill.associate = ({ Position }) => {
     Skill.belongsToMany(Position, {

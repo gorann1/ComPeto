@@ -21,10 +21,10 @@ const model = (sequelize, DataTypes) => {
   );
  
   Dependent.associate = ({ Department }) => {
-   Dependent.belongsTo(Department);
+   Dependent.belongsTo(Department, { foreignKey:'departmentId', targetKey:'id'});
   };
   Dependent.associate = ({ Position }) => {
-   Dependent.hasMany(Position);
+   Dependent.hasMany(Position, { foreignKey:'id', targetKey:'dependentId'});
   };
  
   return Dependent;

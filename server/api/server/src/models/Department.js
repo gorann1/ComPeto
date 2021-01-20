@@ -25,11 +25,11 @@ const model = (sequelize, DataTypes) => {
   );
 
   Department.associate = ({ Center }) => {
-    Department.belongsTo(Center);
+    Department.belongsTo(Center,{foreignKey: 'centerId', targetKey: 'id'});
    };
 
   Department.associate = ({ Dependent }) => {
-   Department.hasMany(Dependent);
+   Department.hasMany(Dependent, {foreignKey: 'id', targetKey: 'departmentId'});
   };
   
   Department.schema("koncar");

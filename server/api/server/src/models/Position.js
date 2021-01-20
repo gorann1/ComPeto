@@ -20,7 +20,7 @@ const model = (sequelize, DataTypes) => {
   );
  
   Position.associate = ({ Dependent }) => {
-   Position.belongsTo(Dependent);
+   Position.belongsTo(Dependent, {foreignKey:'dependentId', targetKey:'id'});
   };
   Position.associate = ({ Employee }) => {
    Position.belongsToMany(Employee, {
